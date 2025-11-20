@@ -1,0 +1,47 @@
+{
+  "HomePage": {
+    "title": "Simple tools for everyday PDF tasks",
+    "subtitle": "Fun & Fast PDF conversion",
+    "description": "Handle your PDFs online with our simple and fast tools. No installation required!",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "Tools": {
+    "merge": {
+      "title": "Merge PDF",
+      "description": "Combine multiple PDF files into one"
+    },
+    "compress": {
+      "title": "Compress PDF",
+      "description": "Reduce PDF file size without losing quality"
+    },
+    "split": {
+      "title": "Split PDF",
+      "description": "Split a PDF file into multiple pages"
+    },
+    "pdfToWord": {
+      "title": "PDF to Word",
+      "description": "Convert PDF documents to editable Word files"
+    },
+    "wordToPdf": {
+      "title": "Word to PDF",
+      "description": "Convert Word documents to PDF format"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "tools": "Tools",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close"
+  }
+}

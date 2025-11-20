@@ -1,0 +1,47 @@
+{
+  "HomePage": {
+    "title": "Einfache Werkzeuge für alltägliche PDF-Aufgaben",
+    "subtitle": "Spaßige und schnelle PDF-Konvertierung",
+    "description": "Verwalten Sie Ihre PDFs online mit unseren einfachen und schnellen Tools. Keine Installation erforderlich!",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr erfahren"
+  },
+  "Tools": {
+    "merge": {
+      "title": "PDF zusammenführen",
+      "description": "Mehrere PDF-Dateien zu einer kombinieren"
+    },
+    "compress": {
+      "title": "PDF komprimieren",
+      "description": "PDF-Dateigröße ohne Qualitätsverlust reduzieren"
+    },
+    "split": {
+      "title": "PDF aufteilen",
+      "description": "Eine PDF-Datei in mehrere Seiten aufteilen"
+    },
+    "pdfToWord": {
+      "title": "PDF zu Word",
+      "description": "PDF-Dokumente in bearbeitbare Word-Dateien konvertieren"
+    },
+    "wordToPdf": {
+      "title": "Word zu PDF",
+      "description": "Word-Dokumente in PDF-Format konvertieren"
+    }
+  },
+  "Navigation": {
+    "home": "Startseite",
+    "tools": "Werkzeuge",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "Common": {
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Erfolg!",
+    "tryAgain": "Erneut versuchen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "close": "Schließen"
+  }
+}
