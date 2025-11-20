@@ -4,7 +4,32 @@
     "subtitle": "Conversion PDF amusante et rapide",
     "description": "Gérez vos PDF en ligne avec nos outils simples et rapides. Aucune installation requise !",
     "getStarted": "Commencer",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "hero": {
+      "accent": "Outils PDF Gratuits • Sans Inscription",
+      "headline": "Tous les Outils PDF Dont Vous Avez Besoin, en Un Seul Endroit",
+      "subheadline": "Fusionnez, compressez, divisez et convertissez des PDF en quelques secondes. 100% gratuit, sécurisé et fonctionne directement dans votre navigateur.",
+      "primaryCta": "Commencer Gratuitement",
+      "trustIndicators": {
+        "filesProcessed": {
+          "value": "2,5M+",
+          "label": "Fichiers Traités"
+        },
+        "freeSecure": {
+          "value": "100%",
+          "label": "Gratuit et Sécurisé"
+        },
+        "averageProcess": {
+          "value": "<30s",
+          "label": "Traitement Moyen"
+        }
+      },
+      "uploadZone": {
+        "title": "Déposez vos fichiers ici",
+        "subtitle": "ou cliquez pour parcourir • Max. 25MB"
+      },
+      "quickSelectTool": "Sélection Rapide d'Outil"
+    }
   },
   "Tools": {
     "merge": {
@@ -26,14 +51,109 @@
     "wordToPdf": {
       "title": "Word vers PDF",
       "description": "Convertir des documents Word au format PDF"
+    },
+    "sectionTitle": "Outils PDF Puissants",
+    "useTool": "Utiliser l'Outil",
+    "badge": "Nos Outils",
+    "sectionDescription": "Choisissez parmi notre collection d'outils PDF puissants et faciles à utiliser"
+  },
+  "Features": {
+    "title": "Pourquoi Choisir SimplePDFConvert ?",
+    "fast": {
+      "title": "Conversions Rapides",
+      "description": "Traitez vos PDF en secondes, pas en minutes"
+    },
+    "free": {
+      "title": "Gratuit pour Commencer",
+      "description": "Essayez tous les outils sans carte de crédit"
+    },
+    "noInstall": {
+      "title": "Aucune Installation Requise",
+      "description": "Fonctionne directement dans votre navigateur, partout"
+    },
+    "secure": {
+      "title": "Traitement Sécurisé des Fichiers",
+      "description": "Vos fichiers sont cryptés et supprimés après traitement"
     }
+  },
+  "HowItWorks": {
+    "title": "Comment Ça Marche",
+    "step1": {
+      "title": "Téléchargez Votre Fichier",
+      "description": "Glissez-déposez ou cliquez pour sélectionner votre PDF ou fichier Word"
+    },
+    "step2": {
+      "title": "Choisissez un Outil",
+      "description": "Sélectionnez l'outil de conversion ou d'édition dont vous avez besoin"
+    },
+    "step3": {
+      "title": "Téléchargez Instantanément",
+      "description": "Obtenez votre fichier traité en quelques secondes, prêt à l'emploi"
+    },
+    "badge": "Processus Simple",
+    "cta": {
+      "description": "Prêt à commencer ? Téléchargez votre premier fichier maintenant.",
+      "button": "Téléchargez Votre Fichier"
+    }
+  },
+  "Testimonials": {
+    "title": "Ce Que Disent Nos Utilisateurs",
+    "testimonial1": {
+      "quote": "Super facile à utiliser ! J'ai fusionné 10 PDF en moins d'une minute. Aucun logiciel compliqué nécessaire.",
+      "author": "Sarah Johnson",
+      "role": "Responsable Marketing"
+    },
+    "testimonial2": {
+      "quote": "Enfin, un outil PDF vraiment rapide. Je l'utilise quotidiennement pour mes documents clients.",
+      "author": "Michael Chen",
+      "role": "Designer Freelance"
+    },
+    "testimonial3": {
+      "quote": "J'adore sa sécurité. Les fichiers sont automatiquement supprimés, je peux lui confier des documents sensibles.",
+      "author": "Emily Rodriguez",
+      "role": "Assistante Juridique"
+    }
+  },
+  "FAQ": {
+    "title": "Questions Fréquemment Posées",
+    "question1": {
+      "question": "SimplePDFConvert est-il gratuit ?",
+      "answer": "Oui ! Nous offrons une formule gratuite avec des limites généreuses. Vous pouvez essayer tous nos outils sans carte de crédit."
+    },
+    "question2": {
+      "question": "Mes fichiers sont-ils sécurisés ?",
+      "answer": "Très sécurisés. Tous les fichiers sont cryptés pendant le téléchargement et le traitement. Nous supprimons automatiquement vos fichiers de nos serveurs après 1 heure."
+    },
+    "question3": {
+      "question": "Les conversions préservent-elles le formatage ?",
+      "answer": "Oui ! Nos outils de conversion préservent autant que possible le formatage, les polices, les images et la mise en page d'origine."
+    },
+    "question4": {
+      "question": "Puis-je fusionner plusieurs PDF à la fois ?",
+      "answer": "Absolument ! Notre outil de fusion PDF vous permet de combiner autant de fichiers PDF que nécessaire en un seul document."
+    }
+  },
+  "Footer": {
+    "tagline": "Outils simples pour les tâches PDF quotidiennes.",
+    "product": "Produit",
+    "home": "Accueil",
+    "tools": "Outils",
+    "pricing": "Tarifs",
+    "company": "Entreprise",
+    "about": "À propos",
+    "contact": "Contact",
+    "legal": "Légal",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "© {year} SimplePDFConvert.com — Outils simples pour les tâches PDF quotidiennes."
   },
   "Navigation": {
     "home": "Accueil",
     "tools": "Outils",
     "pricing": "Tarifs",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "getStarted": "Commencer →"
   },
   "Common": {
     "loading": "Chargement...",

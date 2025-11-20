@@ -4,7 +4,32 @@
     "subtitle": "Fun & Fast PDF conversion",
     "description": "Handle your PDFs online with our simple and fast tools. No installation required!",
     "getStarted": "Get Started",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "hero": {
+      "accent": "Free PDF Tools • No Registration Required",
+      "headline": "Every PDF Tool You Need, All in One Place",
+      "subheadline": "Merge, compress, split, and convert PDFs in seconds. 100% free, secure, and works right in your browser.",
+      "primaryCta": "Get Started Free",
+      "trustIndicators": {
+        "filesProcessed": {
+          "value": "2.5M+",
+          "label": "Files Processed"
+        },
+        "freeSecure": {
+          "value": "100%",
+          "label": "Free & Secure"
+        },
+        "averageProcess": {
+          "value": "<30s",
+          "label": "Average Process"
+        }
+      },
+      "uploadZone": {
+        "title": "Drop your files here",
+        "subtitle": "or click to browse • Max 25MB"
+      },
+      "quickSelectTool": "Quick Select Tool"
+    }
   },
   "Tools": {
     "merge": {
@@ -26,14 +51,109 @@
     "wordToPdf": {
       "title": "Word to PDF",
       "description": "Convert Word documents to PDF format"
+    },
+    "sectionTitle": "Powerful PDF Tools",
+    "useTool": "Use Tool",
+    "badge": "Our Tools",
+    "sectionDescription": "Choose from our collection of powerful, easy-to-use PDF tools"
+  },
+  "Features": {
+    "title": "Why Choose SimplePDFConvert?",
+    "fast": {
+      "title": "Fast Conversions",
+      "description": "Process your PDFs in seconds, not minutes"
+    },
+    "free": {
+      "title": "Completely Free to Start",
+      "description": "Try all tools with no credit card required"
+    },
+    "noInstall": {
+      "title": "No Install Required",
+      "description": "Works directly in your browser, anywhere"
+    },
+    "secure": {
+      "title": "Secure File Handling",
+      "description": "Your files are encrypted and deleted after processing"
     }
+  },
+  "HowItWorks": {
+    "title": "How It Works",
+    "step1": {
+      "title": "Upload Your File",
+      "description": "Drag and drop or click to select your PDF or Word file"
+    },
+    "step2": {
+      "title": "Choose a Tool",
+      "description": "Select the conversion or editing tool you need"
+    },
+    "step3": {
+      "title": "Download Instantly",
+      "description": "Get your processed file in seconds, ready to use"
+    },
+    "badge": "Simple Process",
+    "cta": {
+      "description": "Ready to get started? Upload your first file now.",
+      "button": "Upload Your File"
+    }
+  },
+  "Testimonials": {
+    "title": "What Our Users Say",
+    "testimonial1": {
+      "quote": "Super easy to use! Merged 10 PDFs in less than a minute. No complicated software needed.",
+      "author": "Sarah Johnson",
+      "role": "Marketing Manager"
+    },
+    "testimonial2": {
+      "quote": "Finally, a PDF tool that's actually fast. I use it daily for client documents.",
+      "author": "Michael Chen",
+      "role": "Freelance Designer"
+    },
+    "testimonial3": {
+      "quote": "Love how secure it is. Files are automatically deleted, so I can trust it with sensitive documents.",
+      "author": "Emily Rodriguez",
+      "role": "Legal Assistant"
+    }
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "question1": {
+      "question": "Is SimplePDFConvert free?",
+      "answer": "Yes! We offer a free tier with generous limits. You can try all our tools without a credit card."
+    },
+    "question2": {
+      "question": "How secure are my files?",
+      "answer": "Very secure. All files are encrypted during upload and processing. We automatically delete your files from our servers after 1 hour."
+    },
+    "question3": {
+      "question": "Do conversions keep formatting?",
+      "answer": "Yes! Our conversion tools preserve the original formatting, fonts, images, and layout as much as possible."
+    },
+    "question4": {
+      "question": "Can I merge multiple PDFs at once?",
+      "answer": "Absolutely! Our Merge PDF tool lets you combine as many PDF files as you need into a single document."
+    }
+  },
+  "Footer": {
+    "tagline": "Simple tools for everyday PDF tasks.",
+    "product": "Product",
+    "home": "Home",
+    "tools": "Tools",
+    "pricing": "Pricing",
+    "company": "Company",
+    "about": "About",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© {year} SimplePDFConvert.com — Simple tools for everyday PDF tasks."
   },
   "Navigation": {
     "home": "Home",
     "tools": "Tools",
     "pricing": "Pricing",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "getStarted": "Get Started →"
   },
   "Common": {
     "loading": "Loading...",

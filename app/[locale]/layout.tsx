@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { routing, type Locale } from "@/i18n/routing";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { FAQ } from "./_components/faq";
+import { Testimonials } from "./_components/testimonials";
 
 import "../globals.css";
 
@@ -50,7 +54,15 @@ export default async function LocaleLayout({ children, params }: Props) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <Testimonials />
+            <FAQ />
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
