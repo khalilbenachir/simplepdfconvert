@@ -17,3 +17,5 @@ export const routing = defineRouting({
   // producing a loop. Turn this off so `/` serves the default locale.
   localeDetection: false,
 });
+
+export type Locale = (typeof routing.locales)[number];
