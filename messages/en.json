@@ -153,7 +153,12 @@
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
-    "getStarted": "Get Started →"
+    "getStarted": "Get Started →",
+    "skipToContent": "Skip to main content",
+    "logoAria": "SimplePDFConvert logo",
+    "logoTitle": "SimplePDFConvert",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Common": {
     "loading": "Loading...",

@@ -88,7 +88,7 @@ export function LanguageSwitcher() {
             variant="primary"
             className={cn(
               "h-9! w-9! p-0! rounded-lg!",
-              "relative flex items-center justify-center",
+              "relative cursor-pointer flex items-center justify-center",
               "group overflow-hidden",
               "hover:scale-110 hover:shadow-lg active:scale-95"
             )}

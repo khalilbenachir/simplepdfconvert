@@ -153,7 +153,12 @@
     "pricing": "Tarifs",
     "about": "À propos",
     "contact": "Contact",
-    "getStarted": "Commencer →"
+    "getStarted": "Commencer →",
+    "skipToContent": "Aller au contenu principal",
+    "logoAria": "Logo SimplePDFConvert",
+    "logoTitle": "SimplePDFConvert",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
   },
   "Common": {
     "loading": "Chargement...",

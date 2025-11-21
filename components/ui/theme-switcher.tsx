@@ -18,7 +18,7 @@ export function ThemeSwitcher() {
       onClick={toggleTheme}
       type="button"
       suppressHydrationWarning
-      className="relative h-9 w-9 rounded-lg border border-border bg-background transition-all duration-300 flex items-center justify-center group overflow-hidden hover:scale-110 hover:border-primary/40 active:scale-95"
+      className="relative cursor-pointer h-9 w-9 rounded-lg border border-border bg-background transition-all duration-300 flex items-center justify-center group overflow-hidden hover:scale-110 hover:border-primary/40 active:scale-95"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       {/* Hover glow effect */}
