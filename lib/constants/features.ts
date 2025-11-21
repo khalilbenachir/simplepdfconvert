@@ -12,25 +12,25 @@ export const FEATURES: Feature[] = [
   {
     key: 'fast',
     icon: Zap,
-    gradient: 'from-yellow-500 to-orange-500',
-    bgGradient: 'from-yellow-500/10 to-orange-500/10',
+    gradient: 'from-gradient-yellow to-gradient-orange',
+    bgGradient: 'from-gradient-yellow/10 to-gradient-orange/10',
   },
   {
     key: 'free',
     icon: DollarSign,
-    gradient: 'from-green-500 to-emerald-500',
-    bgGradient: 'from-green-500/10 to-emerald-500/10',
+    gradient: 'from-gradient-green to-gradient-emerald',
+    bgGradient: 'from-gradient-green/10 to-gradient-emerald/10',
   },
   {
     key: 'noInstall',
     icon: Download,
-    gradient: 'from-blue-500 to-indigo-500',
-    bgGradient: 'from-blue-500/10 to-indigo-500/10',
+    gradient: 'from-gradient-blue to-gradient-indigo',
+    bgGradient: 'from-gradient-blue/10 to-gradient-indigo/10',
   },
   {
     key: 'secure',
     icon: Shield,
-    gradient: 'from-purple-500 to-pink-500',
-    bgGradient: 'from-purple-500/10 to-pink-500/10',
+    gradient: 'from-gradient-purple to-gradient-pink',
+    bgGradient: 'from-gradient-purple/10 to-gradient-pink/10',
   },
 ];

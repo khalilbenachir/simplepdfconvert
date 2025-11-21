@@ -1,20 +1,47 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand Colors - Primary: #FF4C4C (oklch: 60% .25 15) */
   --primary: oklch(60% .25 15);
   --primary-foreground: oklch(100% 0 0);
+  --primary-mid: oklch(65% 0.27 20); /* Warmer gradient midpoint */
+
+  /* Secondary & Accent Colors */
   --secondary: oklch(65% .2 45);
   --secondary-foreground: oklch(100% 0 0);
   --accent: oklch(55% .2 260);
   --accent-foreground: oklch(100% 0 0);
+
+  /* Tool/Feature Gradient Colors */
+  --gradient-orange: oklch(70% 0.18 50); /* orange-500 */
+  --gradient-red: oklch(60% 0.25 15); /* red-500 */
+  --gradient-pink: oklch(65% 0.25 350); /* pink-500 */
+  --gradient-purple: oklch(60% 0.22 290); /* purple-500 */
+  --gradient-blue: oklch(60% 0.22 250); /* blue-500 */
+  --gradient-cyan: oklch(70% 0.15 200); /* cyan-500 */
+  --gradient-yellow: oklch(75% 0.18 90); /* yellow-500 */
+  --gradient-green: oklch(60% 0.20 145); /* green-500 */
+  --gradient-emerald: oklch(65% 0.18 165); /* emerald-500 */
+  --gradient-indigo: oklch(55% 0.22 270); /* indigo-500 */
+
+  /* Sidebar Colors */
   --sidebar-primary: oklch(60% .25 15);
   --sidebar-primary-foreground: oklch(100% 0 0);
+  --sidebar: oklch(100% 0 0);
+  --sidebar-foreground: oklch(10% 0 0);
+  --sidebar-accent: oklch(65% .2 45);
+  --sidebar-accent-foreground: oklch(100% 0 0);
+  --sidebar-border: oklch(90% 0 0);
+  --sidebar-ring: oklch(60% .25 15);
+
+  /* Chart Colors */
   --chart-1: oklch(60% .25 15);
   --chart-2: oklch(65% .2 45);
   --chart-3: oklch(55% .2 260);
   --chart-4: oklch(60% .25 15);
   --chart-5: oklch(65% .2 45);
-  --radius: .75rem;
+
+  /* UI Colors */
   --background: oklch(99% 0 0);
   --foreground: oklch(10% 0 0);
   --card: oklch(100% 0 0);
@@ -28,51 +55,84 @@
   --border: oklch(90% 0 0);
   --input: oklch(95% 0 0);
   --ring: oklch(60% .25 15);
-  --sidebar: oklch(100% 0 0);
-  --sidebar-foreground: oklch(10% 0 0);
-  --sidebar-accent: oklch(65% .2 45);
+
+  /* Other Tokens */
+  --radius: .75rem;
+}
+
+.dark {
+  /* Brand Colors - Same primary for consistency */
+  --primary: oklch(60% .25 15);
+  --primary-foreground: oklch(100% 0 0);
+  --primary-mid: oklch(65% 0.27 20); /* Warmer gradient midpoint */
+
+  /* Secondary & Accent Colors - Darker variants */
+  --secondary: oklch(30% .15 45);
+  --secondary-foreground: oklch(100% 0 0);
+  --accent: oklch(45% .15 260);
+  --accent-foreground: oklch(100% 0 0);
+
+  /* Tool/Feature Gradient Colors - Same as light mode */
+  --gradient-orange: oklch(70% 0.18 50);
+  --gradient-red: oklch(60% 0.25 15);
+  --gradient-pink: oklch(65% 0.25 350);
+  --gradient-purple: oklch(60% 0.22 290);
+  --gradient-blue: oklch(60% 0.22 250);
+  --gradient-cyan: oklch(70% 0.15 200);
+  --gradient-yellow: oklch(75% 0.18 90);
+  --gradient-green: oklch(60% 0.20 145);
+  --gradient-emerald: oklch(65% 0.18 165);
+  --gradient-indigo: oklch(55% 0.22 270);
+
+  /* UI Colors - Dark variants */
+  --background: oklch(15% 0 0);
+  --foreground: oklch(95% 0 0);
+  --card: oklch(18% 0 0);
+  --card-foreground: oklch(95% 0 0);
+  --popover: oklch(18% 0 0);
+  --popover-foreground: oklch(95% 0 0);
+  --muted: oklch(25% 0 0);
+  --muted-foreground: oklch(60% 0 0);
+  --destructive: oklch(57.7% .245 27.325);
+  --destructive-foreground: oklch(98.5% 0 0);
+  --border: oklch(25% 0 0);
+  --input: oklch(25% 0 0);
+  --ring: oklch(60% .25 15);
+
+  /* Sidebar Colors - Dark variants */
+  --sidebar: oklch(18% 0 0);
+  --sidebar-foreground: oklch(95% 0 0);
+  --sidebar-accent: oklch(30% .15 45);
   --sidebar-accent-foreground: oklch(100% 0 0);
-  --sidebar-border: oklch(90% 0 0);
+  --sidebar-border: oklch(25% 0 0);
   --sidebar-ring: oklch(60% .25 15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: oklch(60% .25 15);
-    --primary-foreground: oklch(100% 0 0);
-    --secondary: oklch(30% .15 45);
-    --secondary-foreground: oklch(100% 0 0);
-    --accent: oklch(45% .15 260);
-    --accent-foreground: oklch(100% 0 0);
-    --background: oklch(15% 0 0);
-    --foreground: oklch(95% 0 0);
-    --card: oklch(18% 0 0);
-    --card-foreground: oklch(95% 0 0);
-    --popover: oklch(18% 0 0);
-    --popover-foreground: oklch(95% 0 0);
-    --muted: oklch(25% 0 0);
-    --muted-foreground: oklch(60% 0 0);
-    --destructive: oklch(57.7% .245 27.325);
-    --destructive-foreground: oklch(98.5% 0 0);
-    --border: oklch(25% 0 0);
-    --input: oklch(25% 0 0);
-    --ring: oklch(60% .25 15);
-    --sidebar: oklch(18% 0 0);
-    --sidebar-foreground: oklch(95% 0 0);
-    --sidebar-accent: oklch(30% .15 45);
-    --sidebar-accent-foreground: oklch(100% 0 0);
-    --sidebar-border: oklch(25% 0 0);
-    --sidebar-ring: oklch(60% .25 15);
-  }
-}
-
 @theme inline {
+  /* Brand Colors */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-mid: var(--primary-mid);
+
+  /* Secondary & Accent */
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  /* Gradient Colors */
+  --color-gradient-orange: var(--gradient-orange);
+  --color-gradient-red: var(--gradient-red);
+  --color-gradient-pink: var(--gradient-pink);
+  --color-gradient-purple: var(--gradient-purple);
+  --color-gradient-blue: var(--gradient-blue);
+  --color-gradient-cyan: var(--gradient-cyan);
+  --color-gradient-yellow: var(--gradient-yellow);
+  --color-gradient-green: var(--gradient-green);
+  --color-gradient-emerald: var(--gradient-emerald);
+  --color-gradient-indigo: var(--gradient-indigo);
+
+  /* UI Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -86,6 +146,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Sidebar Colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -94,11 +156,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Chart Colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* Radius & Fonts */
   --radius-sm: calc(var(--radius) - 0.25rem);
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 0.25rem);
@@ -139,12 +205,123 @@ body {
   }
 }
 
+@keyframes slide-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-slide-in-from-left {
+  animation: slide-in-from-left 400ms ease-out forwards;
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
 }
 
 .delay-100 {

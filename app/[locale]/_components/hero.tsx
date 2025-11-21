@@ -28,9 +28,9 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" aria-label="Hero section" id="main-content">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-0 -left-4 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
         <div className="absolute top-0 -right-4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
         <div className="absolute -bottom-8 left-20 w-96 h-96 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
@@ -42,7 +42,7 @@ export function Hero() {
           <div className="space-y-8 opacity-0 animate-fade-in-up">
             {/* Accent Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
               <span className="text-sm font-medium bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {t('accent')}
               </span>
@@ -61,28 +61,28 @@ export function Hero() {
             </p>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6 pt-4">
+            <dl className="flex flex-wrap items-center gap-6 pt-4">
               <div className="flex flex-col">
-                <div className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <dt className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {t('trustIndicators.filesProcessed.value')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('trustIndicators.filesProcessed.label')}</div>
+                </dt>
+                <dd className="text-sm text-muted-foreground">{t('trustIndicators.filesProcessed.label')}</dd>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-12 bg-border" aria-hidden="true" />
               <div className="flex flex-col">
-                <div className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <dt className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {t('trustIndicators.freeSecure.value')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('trustIndicators.freeSecure.label')}</div>
+                </dt>
+                <dd className="text-sm text-muted-foreground">{t('trustIndicators.freeSecure.label')}</dd>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-12 bg-border" aria-hidden="true" />
               <div className="flex flex-col">
-                <div className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <dt className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {t('trustIndicators.averageProcess.value')}
-                </div>
-                <div className="text-sm text-muted-foreground">{t('trustIndicators.averageProcess.label')}</div>
+                </dt>
+                <dd className="text-sm text-muted-foreground">{t('trustIndicators.averageProcess.label')}</dd>
               </div>
-            </div>
+            </dl>
           </div>
 
           {/* Right Column: Interactive Tool Selector */}
@@ -100,16 +100,18 @@ export function Hero() {
                     : 'border-border hover:border-primary/50 bg-card/50 backdrop-blur-sm'
                   }
                 `}
+                role="region"
+                aria-label="File upload zone"
               >
                 <div className="p-8 md:p-12 text-center space-y-6">
                   {/* Upload Icon */}
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-300">
-                    <Upload className="w-10 h-10 text-primary" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                    <Upload className="w-10 h-10 text-primary" aria-hidden="true" />
                   </div>
 
                   {/* Upload Text */}
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">
+                    <h3 className="text-xl font-semibold" id="upload-zone-title">
                       {t('uploadZone.title')}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -117,13 +119,14 @@ export function Hero() {
                     </p>
                   </div>
 
-                  {/* Fake file input trigger */}
+                  {/* File input trigger */}
                   <input
                     type="file"
-                    accept=".pdf,.doc,.docx"
+                    accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     multiple
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-2xl"
                     onChange={() => {/* TODO: Handle file selection */}}
+                    aria-labelledby="upload-zone-title"
                   />
                 </div>
 
@@ -141,22 +144,25 @@ export function Hero() {
                           onClick={() => setSelectedTool(tool.key)}
                           className={`
                             relative group/tool p-4 rounded-xl border transition-all duration-300
-                            hover:scale-[1.02] hover:shadow-lg
+                            hover:scale-[1.02] hover:shadow-lg focus-visible:scale-[1.02] focus-visible:shadow-lg
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                             ${selectedTool === tool.key
                               ? 'border-primary bg-primary/10 shadow-md'
-                              : 'border-border bg-card hover:border-primary/30'
+                              : 'border-border bg-card hover:border-primary/30 focus-visible:border-primary/30'
                             }
                           `}
                           style={{ animationDelay: `${idx * 100}ms` }}
+                          aria-label={`Select ${tTools(`${tool.key}.title`)} tool`}
+                          aria-pressed={selectedTool === tool.key}
                         >
                           <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg bg-linear-to-br ${tool.gradient} opacity-90`}>
-                              <Icon className="w-4 h-4 text-white" />
+                            <div className={`p-2 rounded-lg bg-linear-to-br ${tool.gradient} opacity-90`} aria-hidden="true">
+                              <Icon className="w-4 h-4 text-white" aria-hidden="true" />
                             </div>
                             <span className="text-sm font-medium text-left">{tTools(`${tool.key}.title`)}</span>
                           </div>
                           {selectedTool === tool.key && (
-                            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent" />
+                            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent" aria-hidden="true" />
                           )}
                         </button>
                       );
@@ -166,8 +172,8 @@ export function Hero() {
               </div>
 
               {/* Decorative floating elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-linear-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-linear-to-br from-accent/10 to-primary/10 rounded-full blur-2xl animate-pulse animation-delay-1000" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-linear-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl animate-pulse" aria-hidden="true" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-linear-to-br from-accent/10 to-primary/10 rounded-full blur-2xl animate-pulse animation-delay-1000" aria-hidden="true" />
             </div>
           </div>
         </div>

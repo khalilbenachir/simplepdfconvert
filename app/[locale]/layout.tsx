@@ -7,6 +7,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { routing, type Locale } from "@/i18n/routing";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { FAQ } from "./_components/faq";
 import { Testimonials } from "./_components/testimonials";
 
@@ -49,21 +50,28 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-            <Testimonials />
-            <FAQ />
-            <Footer />
-          </div>
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages}>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main id="main-content" className="flex-1">
+                {children}
+              </main>
+              <Testimonials />
+              <FAQ />
+              <Footer />
+            </div>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
