@@ -49,7 +49,7 @@
   --popover: oklch(100% 0 0);
   --popover-foreground: oklch(10% 0 0);
   --muted: oklch(92% 0 0);
-  --muted-foreground: oklch(50% 0 0);
+  --muted-foreground: oklch(45% 0 0);
   --destructive: oklch(57.7% .245 27.325);
   --destructive-foreground: oklch(98.5% 0 0);
   --border: oklch(90% 0 0);
@@ -61,10 +61,10 @@
 }
 
 .dark {
-  /* Brand Colors - Same primary for consistency */
-  --primary: oklch(60% .25 15);
+  /* Brand Colors - Improved contrast for dark mode */
+  --primary: oklch(65% .25 15); /* Increased from 60% to 65% for better contrast */
   --primary-foreground: oklch(100% 0 0);
-  --primary-mid: oklch(65% 0.27 20); /* Warmer gradient midpoint */
+  --primary-mid: oklch(70% 0.27 20); /* Warmer gradient midpoint */
 
   /* Secondary & Accent Colors - Darker variants */
   --secondary: oklch(30% .15 45);
@@ -176,7 +176,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @keyframes fade-in-up {
@@ -283,6 +283,33 @@ body {
   }
 }
 
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 30px 0px currentColor;
+  }
+}
+
+@keyframes rotate-subtle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
@@ -324,6 +351,18 @@ body {
   animation: pulse-slow 4s ease-in-out infinite;
 }
 
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-rotate-subtle {
+  animation: rotate-subtle 20s linear infinite;
+}
+
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -354,4 +393,33 @@ body {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+/* Respect user's motion preferences for accessibility (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable all custom animations */
+  .animate-fade-in-up,
+  .animate-blob,
+  .animate-slide-in-from-left,
+  .animate-gradient,
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-scale-in,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pulse-slow,
+  .animate-float-gentle,
+  .animate-glow-pulse,
+  .animate-rotate-subtle {
+    animation: none !important;
+  }
 }
