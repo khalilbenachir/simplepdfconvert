@@ -310,6 +310,28 @@ body {
   }
 }
 
+@keyframes lift-subtle {
+  from {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+@keyframes fade-in-stagger {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
@@ -363,6 +385,10 @@ body {
   animation: rotate-subtle 20s linear infinite;
 }
 
+.animate-fade-in-stagger {
+  animation: fade-in-stagger 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -393,6 +419,20 @@ body {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+/* Font utility classes */
+.font-dm-sans {
+  font-family: var(--font-dm-sans);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Shadow utility classes */
+.shadow-hover-lift {
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
 }
 
 /* Respect user's motion preferences for accessibility (WCAG 2.3.3) */
