@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import { Geist, Geist_Mono, DM_Sans, Inter } from "next/font/google";
 
 import { routing, type Locale } from "@/i18n/routing";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { FAQ } from "./_components/faq";
 import { Testimonials } from "./_components/testimonials";

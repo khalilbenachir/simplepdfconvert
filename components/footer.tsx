@@ -82,12 +82,13 @@ export function Footer() {
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
         style={{ mixBlendMode: 'screen' }}
+        aria-hidden="true"
       />
 
       {/* Decorative Floating Shapes */}
-      <div className="absolute top-10 left-[10%] w-20 h-20 rounded-full bg-primary/5 blur-2xl animate-pulse" />
-      <div className="absolute bottom-20 right-[15%] w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-pulse delay-700" />
-      <div className="absolute top-1/2 right-[30%] w-16 h-16 rounded-full bg-primary/5 blur-xl animate-pulse delay-1000" />
+      <div className="absolute top-10 left-[10%] w-20 h-20 rounded-full bg-primary/5 blur-2xl animate-pulse" aria-hidden="true" />
+      <div className="absolute bottom-20 right-[15%] w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-pulse delay-700" aria-hidden="true" />
+      <div className="absolute top-1/2 right-[30%] w-16 h-16 rounded-full bg-primary/5 blur-xl animate-pulse delay-1000" aria-hidden="true" />
 
       <div className="relative container mx-auto px-4 lg:px-8 py-20">
         {/* Main Content - Centered Layout */}
@@ -103,53 +104,53 @@ export function Footer() {
           </div>
 
           {/* Navigation Links - Flowing Layout */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 animate-fade-in delay-200">
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 animate-fade-in delay-200">
             <Link
               href="/"
               className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               <span className="relative z-10">{t('home')}</span>
-              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" />
+              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
             </Link>
 
-            <span className="text-muted-foreground/30">•</span>
+            <span className="text-muted-foreground/30" aria-hidden="true">•</span>
 
             <Link
               href="/tools"
               className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               <span className="relative z-10">{t('tools')}</span>
-              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" />
+              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
             </Link>
 
-            <span className="text-muted-foreground/30">•</span>
+            <span className="text-muted-foreground/30" aria-hidden="true">•</span>
 
             <Link
               href="/pricing"
               className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               <span className="relative z-10">{t('pricing')}</span>
-              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" />
+              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
             </Link>
 
-            <span className="text-muted-foreground/30">•</span>
+            <span className="text-muted-foreground/30" aria-hidden="true">•</span>
 
             <Link
               href="/about"
               className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               <span className="relative z-10">{t('about')}</span>
-              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" />
+              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
             </Link>
 
-            <span className="text-muted-foreground/30">•</span>
+            <span className="text-muted-foreground/30" aria-hidden="true">•</span>
 
             <Link
               href="/contact"
               className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               <span className="relative z-10">{t('contact')}</span>
-              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" />
+              <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
             </Link>
           </nav>
 
@@ -160,17 +161,17 @@ export function Footer() {
               className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group"
             >
               {t('privacy')}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" aria-hidden="true" />
             </Link>
 
-            <span className="text-muted-foreground/30">•</span>
+            <span className="text-muted-foreground/30" aria-hidden="true">•</span>
 
             <Link
               href="/terms"
               className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group"
             >
               {t('terms')}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" aria-hidden="true" />
             </Link>
           </div>
 
@@ -223,6 +224,15 @@ export function Footer() {
 
         .delay-1000 {
           animation-delay: 1000ms;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-pulse,
+          .animate-fade-in {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
         }
       `}</style>
     </footer>
