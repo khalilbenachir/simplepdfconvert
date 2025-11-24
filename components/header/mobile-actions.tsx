@@ -21,7 +21,9 @@ export function MobileActions({ mobileMenuOpen, onToggle, t }: MobileActionsProp
       <button
         onClick={onToggle}
         className="p-2.5 text-foreground/85 hover:text-foreground focus-visible:text-foreground hover:bg-accent/60 focus-visible:bg-accent/60 rounded-xl transition-all duration-300 border border-transparent hover:border-border/50 focus-visible:border-border/50 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-        aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
+        aria-label={t('toggleMenu')}
+        aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-menu"
       >
         <Menu className="w-6 h-6" aria-hidden="true" />
       </button>

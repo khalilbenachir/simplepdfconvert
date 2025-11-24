@@ -2,29 +2,20 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Upload } from 'lucide-react';
+import type { FileRejection } from 'react-dropzone';
 
 import { TOOLS } from '@/lib/constants/tools';
+import { Dropzone } from '@/components/ui/dropzone';
 
 export function Hero() {
   const t = useTranslations('HomePage.hero');
   const tTools = useTranslations('Tools');
-  const [isDragging, setIsDragging] = useState(false);
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-    // TODO: Handle file drop
+  const handleFileDrop = (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
+    console.log('Accepted files:', acceptedFiles);
+    console.log('Rejected files:', rejectedFiles);
+    // TODO: Process files based on selectedTool
   };
 
   return (
@@ -88,54 +79,20 @@ export function Hero() {
           {/* Right Column: Interactive Tool Selector */}
           <div className="opacity-0 animate-fade-in-up delay-200">
             <div className="relative">
-              {/* File Upload Zone */}
-              <div
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-                className={`
-                  relative group rounded-2xl border-2 border-dashed transition-all duration-300
-                  ${isDragging
-                    ? 'border-primary bg-primary/5 scale-[1.02]'
-                    : 'border-border hover:border-primary/50 bg-card/50 backdrop-blur-sm'
-                  }
-                `}
-                role="region"
-                aria-label="File upload zone"
-              >
-                <div className="p-8 md:p-12 text-center space-y-6">
-                  {/* Upload Icon */}
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                    <Upload className="w-10 h-10 text-primary" aria-hidden="true" />
-                  </div>
-
-                  {/* Upload Text */}
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold" id="upload-zone-title">
-                      {t('uploadZone.title')}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {t('uploadZone.subtitle')}
-                    </p>
-                  </div>
-
-                  {/* File input trigger */}
-                  <input
-                    type="file"
-                    accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    multiple
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-2xl"
-                    onChange={() => {/* TODO: Handle file selection */}}
-                    aria-labelledby="upload-zone-title"
-                  />
-                </div>
+              <div className="relative rounded-2xl overflow-hidden">
+                {/* Dropzone Component */}
+                <Dropzone
+                  onDrop={handleFileDrop}
+                  showFileList={false}
+                  className="mb-0"
+                />
 
                 {/* Quick Tool Selector */}
                 <div className="border-t border-border/50 p-6 bg-muted/30">
-                  <p className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider">
+                  <h3 className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider" id="tool-selector-heading">
                     {t('quickSelectTool')}
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3" role="group" aria-labelledby="tool-selector-heading">
                     {TOOLS.slice(0, 4).map((tool, idx) => {
                       const Icon = tool.icon;
                       return (

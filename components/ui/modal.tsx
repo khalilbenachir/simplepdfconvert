@@ -122,6 +122,9 @@ interface MobileMenuModalProps {
 }
 
 export function MobileMenuModal({ isOpen, onClose, children }: MobileMenuModalProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
@@ -132,6 +135,13 @@ export function MobileMenuModal({ isOpen, onClose, children }: MobileMenuModalPr
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       document.addEventListener('keydown', handleEscape);
+
+      setTimeout(() => {
+        const firstFocusable = contentRef.current?.querySelector(
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) as HTMLElement;
+        firstFocusable?.focus();
+      }, 100);
     }
 
     return () => {
@@ -140,16 +150,44 @@ export function MobileMenuModal({ isOpen, onClose, children }: MobileMenuModalPr
     };
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !contentRef.current) return;
+
+      const focusableElements = contentRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleTabKey);
+    return () => document.removeEventListener('keydown', handleTabKey);
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div
+      ref={contentRef}
       className={cn(
         'fixed inset-0 z-50',
         'animate-fade-in'
       )}
       role="dialog"
       aria-modal="true"
+      aria-label="Mobile menu"
+      id="mobile-menu"
     >
       {/* Animated backdrop */}
       <div className="absolute inset-0 bg-background/95 backdrop-blur-3xl" />
@@ -181,6 +219,7 @@ export function MobileMenuModal({ isOpen, onClose, children }: MobileMenuModalPr
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <rect x="3" y="2" width="14" height="16" rx="2" stroke="white" strokeWidth="1.5" />
                 <line x1="6" y1="6" x2="14" y2="6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
@@ -195,11 +234,12 @@ export function MobileMenuModal({ isOpen, onClose, children }: MobileMenuModalPr
           </div>
 
           <button
+            ref={closeButtonRef}
             onClick={onClose}
-            className="relative z-10 p-3 text-foreground/70 hover:text-foreground hover:bg-accent/60 rounded-2xl transition-all duration-300 hover:rotate-90 active:scale-95"
+            className="relative z-10 p-3 text-foreground/70 hover:text-foreground hover:bg-accent/60 focus-visible:bg-accent/60 rounded-2xl transition-all duration-300 hover:rotate-90 focus-visible:rotate-90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label="Close menu"
           >
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 

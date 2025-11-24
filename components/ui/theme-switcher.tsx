@@ -2,25 +2,39 @@
 
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 export function ThemeSwitcher() {
   const { setTheme, theme, systemTheme } = useTheme();
+  const [announcement, setAnnouncement] = useState('');
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const isDark = currentTheme === 'dark';
 
   const toggleTheme = () => {
-    setTheme(isDark ? 'light' : 'dark');
+    const newTheme = isDark ? 'light' : 'dark';
+    setTheme(newTheme);
+    setAnnouncement(`Theme changed to ${newTheme} mode`);
   };
 
+  useEffect(() => {
+    if (!announcement) return;
+    const timer = setTimeout(() => setAnnouncement(''), 1000);
+    return () => clearTimeout(timer);
+  }, [announcement]);
+
   return (
-    <button
-      onClick={toggleTheme}
-      type="button"
-      suppressHydrationWarning
-      className="relative cursor-pointer h-9 w-9 rounded-lg border border-border bg-background transition-all duration-300 flex items-center justify-center group overflow-hidden hover:scale-110 hover:border-primary/40 active:scale-95"
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-    >
+    <>
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {announcement}
+      </div>
+      <button
+        onClick={toggleTheme}
+        type="button"
+        suppressHydrationWarning
+        className="relative cursor-pointer h-9 w-9 rounded-lg border border-border bg-background transition-all duration-300 flex items-center justify-center group overflow-hidden hover:scale-110 hover:border-primary/40 focus-visible:border-primary/40 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
       {/* Hover glow effect */}
       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/15 transition-all duration-300 rounded-lg" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/20 blur-xl transition-all duration-500 rounded-full" />
@@ -50,6 +64,7 @@ export function ThemeSwitcher() {
       </div>
 
       <span className="sr-only">Toggle theme</span>
-    </button>
+      </button>
+    </>
   );
 }

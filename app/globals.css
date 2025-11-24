@@ -435,6 +435,19 @@ body {
   box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
 }
 
+/* Screen reader only utility class (WCAG 2.1.1) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Respect user's motion preferences for accessibility (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   *,

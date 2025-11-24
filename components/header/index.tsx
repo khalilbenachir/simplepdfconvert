@@ -36,7 +36,7 @@ export function Header() {
           }}
         />
 
-        <nav className="relative container mx-auto px-4 lg:px-8">
+        <div className="relative container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Logo t={t} />
             <DesktopNav navLinks={NAV_LINKS} t={t} />
@@ -47,7 +47,7 @@ export function Header() {
               t={t}
             />
           </div>
-        </nav>
+        </div>
       </header>
 
       <MobileMenu
