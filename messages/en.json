@@ -116,6 +116,21 @@
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
+    "badge": "Support",
+    "heading": {
+      "line1": "Frequently Asked",
+      "line2": "Questions"
+    },
+    "subtitle": "Everything you need to know about our PDF tools",
+    "cta": {
+      "heading": "Still have questions?",
+      "description": "Can't find the answer you're looking for? Our support team is here to help.",
+      "button": "Contact Support"
+    },
+    "aria": {
+      "expandIcon": "Toggle question",
+      "questionNumber": "Question {number}"
+    },
     "question1": {
       "question": "Is SimplePDFConvert free?",
       "answer": "Yes! We offer a free tier with generous limits. You can try all our tools without a credit card."
