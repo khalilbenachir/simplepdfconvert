@@ -160,7 +160,9 @@
     "legal": "Legal",
     "privacy": "Privacidad",
     "terms": "Términos",
-    "copyright": "© {year} SimplePDFConvert.com — Herramientas simples para tareas PDF cotidianas."
+    "copyright": "© {year} SimplePDFConvert.com — Herramientas simples para tareas PDF cotidianas.",
+    "footerNavigation": "Navegación del pie de página",
+    "legalNavigation": "Enlaces legales"
   },
   "Navigation": {
     "home": "Inicio",
@@ -173,7 +175,9 @@
     "logoAria": "Logo de SimplePDFConvert",
     "logoTitle": "SimplePDFConvert",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "closeMenu": "Cerrar menú",
+    "toggleMenu": "Alternar menú",
+    "mainNavigation": "Navegación principal"
   },
   "Common": {
     "loading": "Cargando...",
@@ -183,5 +187,23 @@
     "cancel": "Cancelar",
     "confirm": "Confirmar",
     "close": "Cerrar"
+  },
+  "Dropzone": {
+    "title": {
+      "idle": "Arrastra y suelta tus archivos aquí",
+      "active": "Suelta los archivos aquí",
+      "reject": "Tipo de archivo inválido"
+    },
+    "subtitle": {
+      "idle": "o haz clic para buscar",
+      "active": "Suelta para subir",
+      "reject": "Solo se aceptan documentos PDF y Word"
+    },
+    "maxSize": "Soporta PDF, DOC, DOCX • Máx {size}MB por archivo",
+    "selectedFiles": "Archivos Seleccionados ({count})",
+    "rejectedFiles": "Archivos Rechazados",
+    "removeFile": "Eliminar {filename}",
+    "fileSize": "{size} KB",
+    "dropzoneLabel": "Zona de carga de archivos"
   }
 }

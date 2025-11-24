@@ -98,16 +98,16 @@ export function Footer() {
             <div className="mb-6">
               <Logo variant="footer" showDecorations={false} />
             </div>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed animate-fade-in delay-100">
+            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed animate-fade-in delay-100" role="contentinfo">
               {t('tagline')}
             </p>
           </div>
 
           {/* Navigation Links - Flowing Layout */}
-          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 animate-fade-in delay-200">
+          <nav aria-label={t('footerNavigation')} className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 animate-fade-in delay-200">
             <Link
               href="/"
-              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span className="relative z-10">{t('home')}</span>
               <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
@@ -117,7 +117,7 @@ export function Footer() {
 
             <Link
               href="/tools"
-              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span className="relative z-10">{t('tools')}</span>
               <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
@@ -127,7 +127,7 @@ export function Footer() {
 
             <Link
               href="/pricing"
-              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span className="relative z-10">{t('pricing')}</span>
               <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
@@ -137,7 +137,7 @@ export function Footer() {
 
             <Link
               href="/about"
-              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span className="relative z-10">{t('about')}</span>
               <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
@@ -147,7 +147,7 @@ export function Footer() {
 
             <Link
               href="/contact"
-              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="group relative text-base font-medium text-muted-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span className="relative z-10">{t('contact')}</span>
               <span className="absolute inset-0 -z-10 bg-primary/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 blur-sm" aria-hidden="true" />
@@ -155,10 +155,10 @@ export function Footer() {
           </nav>
 
           {/* Legal Links - Subtle Secondary Row */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm animate-fade-in delay-300">
+          <nav aria-label={t('legalNavigation')} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm animate-fade-in delay-300">
             <Link
               href="/privacy"
-              className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group"
+              className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
             >
               {t('privacy')}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" aria-hidden="true" />
@@ -168,12 +168,12 @@ export function Footer() {
 
             <Link
               href="/terms"
-              className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group"
+              className="text-muted-foreground/70 hover:text-primary transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
             >
               {t('terms')}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" aria-hidden="true" />
             </Link>
-          </div>
+          </nav>
 
           {/* Copyright - Clean & Simple */}
           <div className="pt-8 border-t border-border/30 animate-fade-in delay-400">
