@@ -87,43 +87,83 @@ export function Hero() {
                   className="mb-0"
                 />
 
-                {/* Quick Tool Selector */}
+                {/* Quick Tool Selector - All 5 Tools with Asymmetric 2-3 Layout */}
                 <div className="border-t border-border/50 p-6 bg-muted/30">
                   <h3 className="text-xs font-medium text-muted-foreground mb-4 uppercase tracking-wider" id="tool-selector-heading">
                     {t('quickSelectTool')}
                   </h3>
-                  <div className="grid grid-cols-2 gap-3" role="group" aria-labelledby="tool-selector-heading">
-                    {TOOLS.slice(0, 4).map((tool, idx) => {
-                      const Icon = tool.icon;
-                      return (
-                        <button
-                          key={tool.key}
-                          onClick={() => setSelectedTool(tool.key)}
-                          className={`
-                            relative group/tool p-4 rounded-xl border transition-all duration-300
-                            hover:scale-[1.02] hover:shadow-lg focus-visible:scale-[1.02] focus-visible:shadow-lg
-                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
-                            ${selectedTool === tool.key
-                              ? 'border-primary bg-primary/10 shadow-md'
-                              : 'border-border bg-card hover:border-primary/30 focus-visible:border-primary/30'
-                            }
-                          `}
-                          style={{ animationDelay: `${idx * 100}ms` }}
-                          aria-label={`Select ${tTools(`${tool.key}.title`)} tool`}
-                          aria-pressed={selectedTool === tool.key}
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg bg-linear-to-br ${tool.gradient} opacity-90`} aria-hidden="true">
-                              <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+
+                  {/* Asymmetric 2-3 Layout for 5 Tools */}
+                  <div className="space-y-3" role="group" aria-labelledby="tool-selector-heading">
+                    {/* Top row: 2 primary tools (Merge, Compress) */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {TOOLS.slice(0, 2).map((tool, idx) => {
+                        const Icon = tool.icon;
+                        return (
+                          <button
+                            key={tool.key}
+                            onClick={() => setSelectedTool(tool.key)}
+                            className={`
+                              relative group/tool p-4 rounded-xl border transition-all duration-300
+                              hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 focus-visible:scale-[1.02] focus-visible:shadow-lg
+                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+                              ${selectedTool === tool.key
+                                ? 'border-primary bg-primary/10 shadow-md -translate-y-0.5'
+                                : 'border-border bg-card hover:border-primary/30 focus-visible:border-primary/30'
+                              }
+                            `}
+                            style={{ animationDelay: `${idx * 80}ms` }}
+                            aria-label={`Select ${tTools(`${tool.key}.title`)} tool`}
+                            aria-pressed={selectedTool === tool.key}
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className={`p-2 rounded-lg bg-linear-to-br ${tool.gradient} opacity-90`} aria-hidden="true">
+                                <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+                              </div>
+                              <span className="text-sm font-medium text-left">{tTools(`${tool.key}.title`)}</span>
                             </div>
-                            <span className="text-sm font-medium text-left">{tTools(`${tool.key}.title`)}</span>
-                          </div>
-                          {selectedTool === tool.key && (
-                            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent" aria-hidden="true" />
-                          )}
-                        </button>
-                      );
-                    })}
+                            {selectedTool === tool.key && (
+                              <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent" aria-hidden="true" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Bottom row: 3 conversion tools (Split, PDF→Word, Word→PDF) */}
+                    <div className="grid grid-cols-3 gap-2.5">
+                      {TOOLS.slice(2, 5).map((tool, idx) => {
+                        const Icon = tool.icon;
+                        return (
+                          <button
+                            key={tool.key}
+                            onClick={() => setSelectedTool(tool.key)}
+                            className={`
+                              relative group/tool p-3 rounded-xl border transition-all duration-300
+                              hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 focus-visible:scale-[1.02] focus-visible:shadow-lg
+                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+                              ${selectedTool === tool.key
+                                ? 'border-primary bg-primary/10 shadow-md -translate-y-0.5'
+                                : 'border-border bg-card hover:border-primary/30 focus-visible:border-primary/30'
+                              }
+                            `}
+                            style={{ animationDelay: `${(idx + 2) * 80}ms` }}
+                            aria-label={`Select ${tTools(`${tool.key}.title`)} tool`}
+                            aria-pressed={selectedTool === tool.key}
+                          >
+                            <div className="flex flex-col items-center gap-2 text-center">
+                              <div className={`p-2 rounded-lg bg-linear-to-br ${tool.gradient} opacity-90`} aria-hidden="true">
+                                <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+                              </div>
+                              <span className="text-xs font-medium">{tTools(`${tool.key}.title`)}</span>
+                            </div>
+                            {selectedTool === tool.key && (
+                              <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent" aria-hidden="true" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

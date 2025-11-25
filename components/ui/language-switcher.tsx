@@ -14,12 +14,13 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
-type Locale = "en" | "fr" | "es";
+type Locale = "en" | "fr" | "es" | "de";
 
 const LOCALE_CONFIG = {
   en: { name: "English", code: "EN" },
   fr: { name: "Français", code: "FR" },
   es: { name: "Español", code: "ES" },
+  de: { name: "Deutsch", code: "DE" },
 } as const;
 
 const LOCALES = Object.keys(LOCALE_CONFIG) as Locale[];
